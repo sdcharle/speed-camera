@@ -11,11 +11,11 @@
 
 # Calibration Settings
 # --------------------
-CALIBRATE_ON = True       # Create a calibration image file with calibration hash markers 10 px per mark
-CAL_OBJ_PX_L2R = 80       # L2R Moving Objects, Length of a calibration object in pixels
-CAL_OBJ_MM_L2R = 4700     # L2R Moving Objects, Length of the calibration object in millimetres
-CAL_OBJ_PX_R2L = 85       # R2L Moving Objects, Length of a calibration object in pixels
-CAL_OBJ_MM_R2L = 4700     # R2L Moving Objects, Length of the calibration object in millimetres
+CALIBRATE_ON = False       # Create a calibration image file with calibration hash markers 10 px per mark
+CAL_OBJ_PX_L2R = 57       # L2R Moving Objects, Length of a calibration object in pixels
+CAL_OBJ_MM_L2R = 4540     # L2R Moving Objects, Length of the calibration object in millimetres
+CAL_OBJ_PX_R2L = 50       # R2L Moving Objects, Length of a calibration object in pixels
+CAL_OBJ_MM_R2L = 4540     # R2L Moving Objects, Length of the calibration object in millimetres
 # Note if tested speed is too low increase appropriate cal_obj_mm  value and redo speed test for desired direction.
 # IMPORTANT - If plugins Enabled Edit Settings in specified plugin file located in plugins folder.
 
@@ -38,14 +38,14 @@ PLUGIN_NAME = "picam240"  # Specify filename in plugins subfolder without .py ex
 SHOW_SETTINGS_ON = False  # True Displays the config.py file on startup
 LOG_VERBOSE_ON = True     # True= Display basic status information on console False= Off
 LOG_DATA_TO_CSV = False   # True= Save log data as CSV comma separated values  False= Off
-LOG_TO_FILE_ON = False    # True= Send logging to file False= No Logging to File
+LOG_TO_FILE_ON = True    # True= Send logging to file False= No Logging to File
 LOG_FILE_PATH = 'speed-cam.log'  # Location of log file when LOG_TO_FILE_ON=True
 LOG_FPS_ON = False        # True= Show average frame count every 1000 loops False= Off
 
 # Camera Settings
 # ---------------
-CAMERA = "pilibcam"    # valid values usbcam, rtspcam, pilibcam, pilegcam
-CAM_LOCATION = "Front Window"
+CAMERA = "usbcam" #"pilibcam"    # valid values usbcam, rtspcam, pilibcam, pilegcam
+CAM_LOCATION = "SR14"
 USBCAM_SRC = 0         # Device number of USB connection usually 0, 1, 2, Etc
 RTSPCAM_SRC = "rtsp://user:password@IP:554/path"  # Set per IP Cam Docs and config see example below
                                                   # rtsp://admin:mypwd@192.168.1.100:554/12
@@ -105,9 +105,9 @@ MO_LOG_OUT_RANGE_ON = True  # Default= True Show Out of Range Events per x_diff 
 MO_MAX_X_DIFF_PX = 24       # Default= 20 Exclude if max px away >= last motion event x position
 MO_MIN_X_DIFF_PX = 1        # Default= 1 Exclude if min px away <= last event x position
 MO_X_LR_SIDE_BUFF_PX = 10   # Default= 10 Divides motion Rect x for L&R Buffer Space to Ensure contours are in
-MO_TRACK_TIMEOUT_SEC = 0.5  # Default= 0.5 Optional seconds to wait after track End (Avoids dual tracking)
+MO_TRACK_TIMEOUT_SEC = 1 #0.5  # Default= 0.5 Optional seconds to wait after track End (Avoids dual tracking)
 MO_EVENT_TIMEOUT_SEC = 0.3  # Default= 0.3 seconds to wait for next motion event before starting new track
-MO_MAX_SPEED_OVER = 0       # Exclude track if Speed less than or equal to value specified 0=All
+MO_MAX_SPEED_OVER = 13 #0       # Exclude track if Speed less than or equal to value specified 0=All
                             # Can be useful to exclude pedestrians and/or bikes, Etc or track only fast objects
 # Motion Tracking Window Crop Area Settings
 # -----------------------------------------
