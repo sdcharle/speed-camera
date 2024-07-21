@@ -97,7 +97,7 @@ IM_SIGN_TIMEOUT_SEC = 5        # Keep the image sign for 5 seconds.
 
 # Motion Event Settings
 # ---------------------
-MO_SPEED_MPH_ON = False     # Set Speed Units   kph=False  mph=True
+MO_SPEED_MPH_ON = True     # Set Speed Units   kph=False  mph=True
 MO_TRACK_EVENT_COUNT = 6    # Default= 6 Number of Consecutive Motion Events to trigger speed photo. Adjust to suit.
                             # Suggest single core cpu=4-7 quad core=8-15 but adjust to smooth erratic readings due to contour jumps
 MO_MIN_AREA_PX = 200        # Default= 200 Exclude all contours less than or equal to this sq-px Area
